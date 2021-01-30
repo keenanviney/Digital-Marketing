@@ -1,0 +1,32 @@
+docker pull continuumio/miniconda3
+
+docker run -i -t continuumio/miniconda3 /bin/bash #this will allow us to interact (i) with the docker container through it's linux shell
+
+conda install -c conda-forge opencv #install opencv to do image analysis, this does not mess with your locally installed python or python packages
+
+docker cp /Users/keenanv/Desktop/Extraction_Test musing_leavitt:root/ #copy files in
+
+python3 #now open python in terminal
+
+
+
+import cv2
+
+videoFile = "/root/Extraction_Test/DNCC308.mov"
+
+imagesFolder = "/root/Extraction_Test/Images"
+
+cap = cv2.VideoCapture(videoFile)
+
+while(cap.isOpened()):
+    frameId = cap.get(1) #current frame number
+    ret, frame = cap.read()
+    if (ret != True):
+        break
+    if (ret == True):
+        filename = imagesFolder + "/" +  str(int(frameId)) + "_frame_image" + ".jpg"
+        cv2.imwrite(filename, frame)
+
+quit()
+
+docker cp musing_leavitt:root/Extraction_Test/Images /Users/keenanv/Desktop/Extraction_Test/Images #copy the output images into a folder
