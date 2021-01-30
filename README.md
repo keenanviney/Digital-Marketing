@@ -6,6 +6,8 @@ CV-app-master/flask-app - Prototype application to showcase a deep learning mode
 
 Computer_Vision_Deep_Learning - Jupyter Notebook that goes through how the images are pre-processed for the model and how the resulting deep neural network is trained.
 
+Extracting Image from Video - A convenience script that was used to extract a series of images from Facebook and Instagram video ads. 
+
 MTA_parsing - Convenience script for parsing out Multi-Touch Attribution data.
 
 Messages in Market - Analysis done that tried to understand whether there was an optimal number of messages to put into the market in various campaigns. The initial hypothesis was that too few messages would fail to resonate with enough consumer groups while too many massages would end up confusing individual consumers.
